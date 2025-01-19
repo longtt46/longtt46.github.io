@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫猫表情包生成器</title>
+    <link rel="stylesheet" href="longok.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐱 猫猫表情包生成器</h1>
+        <p>输入文字描述，AI帮你生成可爱的猫猫表情包~</p>
+        <textarea id="user-input" placeholder="输入你的内容..." rows="4" cols="50"></textarea>
+        <button id="generate-button">✨ 生成表情包</button>
+        <div id="response" class="response"></div>
+        <div id="image-container" class="image-container">
+            <img id="generated-image" src="" alt="生成的表情包" style="display: none;">
+        </div>
+    </div>
+    <script src="longok.js"></script>
+    <script>
+        document.getElementById('generate-button').addEventListener('click', async () => {
+            const content = document.getElementById('user-input').value;
+            await callAPI(content);
+        });
+    </script>
+</body>
+</html>
